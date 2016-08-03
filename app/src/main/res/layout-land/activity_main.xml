@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/background_color"
+    tools:context="vensy.aboutme.MainActivity">
+
+    <TextView
+        android:textColor="@color/txt_color"
+        android:textSize="@dimen/small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_txt"
+        android:id="@+id/my_txt"
+        android:layout_margin="@dimen/small_margin"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="@dimen/photo_width"
+        android:layout_height="@dimen/photo_height"
+        android:id="@+id/photo"
+        android:src="@drawable/photo"
+        android:layout_below="@+id/my_txt" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="@dimen/large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surname"
+        android:id="@+id/surname"
+        android:layout_below="@+id/my_txt"
+        android:layout_toRightOf="@id/photo"
+        android:layout_margin="@dimen/large_margin" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="@dimen/large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:id="@+id/name"
+        android:layout_toRightOf="@id/photo"
+        android:layout_below="@id/surname"
+        android:layout_margin="@dimen/large_margin" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="@dimen/large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/patronymic"
+        android:id="@+id/patronymic"
+        android:layout_toRightOf="@id/photo"
+        android:layout_below="@id/name"
+        android:layout_margin="@dimen/large_margin" />
+
+    <TextView
+        android:textColor="@color/email_color"
+        android:textSize="@dimen/small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:id="@+id/email"
+        android:layout_toRightOf="@id/photo"
+        android:layout_below="@id/patronymic"
+        android:layout_margin="@dimen/large_margin" />
+
+    <Button
+        android:onClick="onBtnClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_skill"
+        android:layout_below="@id/my_txt"
+        android:layout_alignParentRight="true"
+        android:text="Skill"
+        android:layout_margin="@dimen/small_margin"/>
+
+    <TextView
+        android:textColor="@color/skill_color"
+        android:textSize="@dimen/large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/skills"
+        android:layout_below="@+id/btn_skill"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/email"
+        android:layout_toEndOf="@id/email"
+        android:layout_margin="@dimen/large_margin"
+        android:gravity="right" />
+
+</RelativeLayout>

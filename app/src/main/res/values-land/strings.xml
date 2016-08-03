@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AboutMe</string>
+
+    <string name="my_txt">Альбомная ориентация</string>
+    <string name="surname">Solovyev</string>
+    <string name="name">Vasily</string>
+    <string name="patronymic">Dmitrievich</string>
+    <string name="email">vensy91@gmail.com</string>
+
+    <string-array name="skills">
+        <item>Java Level 1</item>
+        <item>Java Level 2</item>
+        <item>HTML, CSS</item>
+    </string-array>
+
+</resources>
