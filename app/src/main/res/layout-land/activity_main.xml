@@ -17,82 +17,143 @@
         android:layout_height="wrap_content"
         android:text="@string/my_txt"
         android:id="@+id/my_txt"
-        android:layout_margin="@dimen/small_margin"
+        android:layout_margin="@dimen/large_margin"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:layout_width="@dimen/photo_width"
-        android:layout_height="@dimen/photo_height"
-        android:id="@+id/photo"
-        android:src="@drawable/photo"
-        android:layout_below="@+id/my_txt" />
-
-    <TextView
-        android:textColor="@color/black"
-        android:textSize="@dimen/large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/surname"
-        android:id="@+id/surname"
-        android:layout_below="@+id/my_txt"
-        android:layout_toRightOf="@id/photo"
-        android:layout_margin="@dimen/large_margin" />
-
-    <TextView
-        android:textColor="@color/black"
-        android:textSize="@dimen/large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:id="@+id/name"
-        android:layout_toRightOf="@id/photo"
-        android:layout_below="@id/surname"
-        android:layout_margin="@dimen/large_margin" />
-
-    <TextView
-        android:textColor="@color/black"
-        android:textSize="@dimen/large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/patronymic"
-        android:id="@+id/patronymic"
-        android:layout_toRightOf="@id/photo"
-        android:layout_below="@id/name"
-        android:layout_margin="@dimen/large_margin" />
-
-    <TextView
-        android:textColor="@color/email_color"
+    <EditText
+        android:background="@drawable/frame"
+        android:gravity="center"
         android:textSize="@dimen/small"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/edit_text"
         android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:id="@+id/email"
-        android:layout_toRightOf="@id/photo"
-        android:layout_below="@id/patronymic"
-        android:layout_margin="@dimen/large_margin" />
+        android:inputType="textPersonName"
+        android:hint="@string/hint_surname"
+        android:ems="10"
+        android:id="@+id/edit_surname"
+        android:layout_below="@id/my_txt"
+        android:layout_marginTop="@dimen/large_margin"
+        android:padding="@dimen/small_margin"/>
+
+    <EditText
+        android:background="@drawable/frame"
+        android:gravity="center"
+        android:textSize="@dimen/small"
+        android:layout_width="@dimen/edit_text"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/hint_name"
+        android:ems="10"
+        android:id="@+id/edit_name"
+        android:layout_below="@id/edit_surname"
+        android:layout_marginTop="@dimen/large_margin"
+        android:padding="@dimen/small_margin"/>
+
+    <EditText
+        android:background="@drawable/frame"
+        android:gravity="center"
+        android:textSize="@dimen/small"
+        android:layout_width="@dimen/edit_text"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/hint_patronymic"
+        android:ems="10"
+        android:id="@+id/edit_patronymic"
+        android:layout_below="@id/edit_name"
+        android:layout_marginTop="@dimen/large_margin"
+        android:padding="@dimen/small_margin"/>
+
+    <EditText
+        android:background="@drawable/frame"
+        android:gravity="center"
+        android:textSize="@dimen/small"
+        android:layout_width="@dimen/edit_text"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="@string/hint_email"
+        android:ems="10"
+        android:id="@+id/edit_email"
+        android:layout_below="@id/edit_patronymic"
+        android:layout_marginTop="@dimen/large_margin"
+        android:padding="@dimen/small_margin"/>
 
     <Button
-        android:onClick="onBtnClick"
+        android:onClick="onBtnClickShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_skill"
-        android:layout_below="@id/my_txt"
-        android:layout_alignParentRight="true"
-        android:text="Skill"
-        android:layout_margin="@dimen/small_margin"/>
+        android:text="@string/btn_show"
+        android:id="@+id/btn_show"
+        android:layout_below="@id/edit_email"/>
 
-    <TextView
-        android:textColor="@color/skill_color"
-        android:textSize="@dimen/large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/skills"
-        android:layout_below="@+id/btn_skill"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/email"
-        android:layout_toEndOf="@id/email"
-        android:layout_margin="@dimen/large_margin"
-        android:gravity="right" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_txt"
+        android:layout_toEndOf="@id/edit_name"
+        android:layout_toRightOf="@id/edit_name">
+
+        <ImageView
+            android:visibility="invisible"
+            android:layout_width="@dimen/photo_width"
+            android:layout_height="@dimen/photo_height"
+            android:id="@+id/photo"
+            android:src="@drawable/photo" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:visibility="invisible"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/surname"
+                android:layout_margin="@dimen/large_margin" />
+
+            <TextView
+                android:visibility="invisible"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/name"
+                android:layout_margin="@dimen/large_margin" />
+
+            <TextView
+                android:visibility="invisible"
+                android:textColor="@color/black"
+                android:textSize="@dimen/large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/patronymic"
+                android:layout_margin="@dimen/large_margin" />
+
+            <TextView
+                android:visibility="invisible"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/email"
+                android:layout_margin="@dimen/large_margin" />
+
+            <Button
+                android:visibility="invisible"
+                android:onClick="onBtnClickSkill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_skill"
+                android:id="@+id/btn_skill" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

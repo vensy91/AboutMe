@@ -16,10 +16,10 @@
 
     <!--Text Colors-->
     <color name="txt_color">#FFFF1111</color>
-    <color name="email_color">#ff7811</color>
+    <color name="email_color">#1115ff</color>
     <color name="skill_color">#0800fc</color>
 
     <!--Background Colors-->
-    <color name="background_color">#fefff5</color>
+    <color name="background_color">#cad1f7</color>
 
 </resources>
